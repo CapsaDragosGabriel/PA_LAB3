@@ -37,10 +37,6 @@ public abstract class Node {
         this.macAddress = macAddress;
     }
 
-
-    //… toString, etc.
-
-
     @Override
     public String toString() {
         return "Node{" +

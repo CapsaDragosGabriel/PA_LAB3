@@ -6,7 +6,7 @@ public class Computer extends Node implements Identifiable, Storage {
     private double storageCapacity;
 
     public Computer(String name, String macAddress, Location mapLocation, String ipAddress, double storageCapacity) {
-        super(name, macAddress, mapLocation);
+        super(name, mapLocation,macAddress);
         this.ipAddress = ipAddress;
         this.storageCapacity = storageCapacity;
     }
@@ -35,24 +35,27 @@ public class Computer extends Node implements Identifiable, Storage {
     @Override
     public String toString() {
         return "Computer{" +
-                "name='" + name + '\'' +
-                ", storageCapacity=" + storageCapacity +
-                ", ipAddress='" + ipAddress + '\'' +
+                ", name='" + name + '\'' +
+                ", mapLocation=" + mapLocation +
                 ", macAddress='" + macAddress + '\'' +
-                ", mapLocation='" + mapLocation + '\'' +
-                '}';
+                "ipAddress='" + ipAddress + '\'' +
+                ", storageCapacity=" + storageCapacity +
+                "}\n";
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Computer)) return false;
         if (!super.equals(o)) return false;
         Computer computer = (Computer) o;
-        return Double.compare(computer.storageCapacity, storageCapacity) == 0 && Objects.equals(ipAddress, computer.ipAddress);
+        return Double.compare(computer.getStorageCapacity(), getStorageCapacity()) == 0 && getIpAddress().equals(computer.getIpAddress());
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getIpAddress(), getStorageCapacity());
+    }
 }
 
 

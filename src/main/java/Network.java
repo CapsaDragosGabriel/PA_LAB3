@@ -7,8 +7,28 @@ public class Network {
     //… constructors, getters,
 
     public void addNode(Node node) {
-        nodes.add(node);
+        int iterator=0;
+        boolean alreadyExists=false;
+        for(iterator=0;iterator<nodes.size();iterator++)
+            if (nodes.get(iterator) ==node)
+            {
+                alreadyExists=true;
+                System.out.println("There is already a node with this name:"+node.getName());
+            }
+        if (alreadyExists==false)
+        {
+            nodes.add(node);
+        }
     }
+    @Override
+    public String toString()
+    {
+        return "Network{" +
+                "nodes=" + nodes +
+                '}';
+    }
+
+
 
     @Override
     public boolean equals(Object o) {
