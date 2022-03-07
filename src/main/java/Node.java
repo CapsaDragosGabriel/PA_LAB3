@@ -6,6 +6,7 @@ public abstract class Node {
     protected String name;
     protected Location mapLocation;
     protected String macAddress;
+    Map<Node,Integer> connectionCosts;
     //… constructors, getters, setters
     public Node(String name,  Location mapLocation, String macAddress) {
         this.name = name;
@@ -37,6 +38,18 @@ public abstract class Node {
         this.macAddress = macAddress;
     }
 
+    public Map<Node, Integer> getConnectionCosts() {
+        return connectionCosts;
+    }
+
+    public void setConnectionCosts(Map<Node, Integer> connectionCosts) {
+        this.connectionCosts = connectionCosts;
+    }
+    public void addConnection(Node node, int timeCost) {
+        if (timeCost < 0) System.out.println("Time cost cannot be negative");
+        else
+            connectionCosts.put(node, timeCost);
+    }
     @Override
     public String toString() {
         return "Node{" +
