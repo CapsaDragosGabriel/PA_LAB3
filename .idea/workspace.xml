@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70ad4c79-00d0-4f2e-8b5f-0839e76f9b31" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Homework.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Compulsory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Compulsory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Homework.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Homework.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Network.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Comparable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Compulsory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Compulsory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Network.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Node.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +49,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Homework">
     <configuration name="Compulsory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Compulsory" />
       <module name="PA_LAB3" />
@@ -51,8 +57,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Homework" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Homework" />
+      <module name="PA_LAB3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Homework" />
         <item itemvalue="Application.Compulsory" />
       </list>
     </recent_temporary>
@@ -67,7 +81,8 @@
       <updated>1646585136969</updated>
       <workItem from="1646585138529" duration="10675000" />
       <workItem from="1646662471937" duration="244000" />
-      <workItem from="1646663551857" duration="1471000" />
+      <workItem from="1646663551857" duration="2616000" />
+      <workItem from="1646666551129" duration="31000" />
     </task>
     <servers />
   </component>

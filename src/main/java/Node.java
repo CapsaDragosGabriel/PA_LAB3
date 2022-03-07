@@ -12,6 +12,7 @@ public abstract class Node {
         this.name = name;
         this.macAddress = macAddress;
         this.mapLocation = mapLocation;
+        connectionCosts=new HashMap<>();
     }
 
     public String getName() {
@@ -50,13 +51,15 @@ public abstract class Node {
         else
             connectionCosts.put(node, timeCost);
     }
+
     @Override
     public String toString() {
-        return "Node{" +
+        return "Node{\n" +
                 "name='" + name + '\'' +
                 ", mapLocation=" + mapLocation +
                 ", macAddress='" + macAddress + '\'' +
-                '}';
+                ", connectionCosts=" + this.getConnectionCosts() +
+                "}\n";
     }
 
     @Override

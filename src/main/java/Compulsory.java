@@ -10,6 +10,7 @@ public class Compulsory {
         Switch s1= new Switch("s1",new Location(1,3),"macAddr");
         app.addNode(s1);
         app.addNode(s1);
+
         System.out.println(app);
     }
 }
