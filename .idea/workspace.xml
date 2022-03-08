@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70ad4c79-00d0-4f2e-8b5f-0839e76f9b31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Compulsory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Compulsory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Homework.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Homework.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Comparable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Compulsory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Compulsory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Network.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Node.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +75,7 @@
       <workItem from="1646662471937" duration="244000" />
       <workItem from="1646663551857" duration="2616000" />
       <workItem from="1646666551129" duration="31000" />
+      <workItem from="1646666832726" duration="957000" />
     </task>
     <servers />
   </component>
