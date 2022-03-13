@@ -36,17 +36,61 @@ public class Network {
     }
 
     public void printConnections()
-    {for (int i=0;i<nodes.size();i++)
-        {System.out.println(nodes.get(i).getConnectionCosts());
+    {for (int index=0;index<nodes.size();index++)
+        {System.out.println(nodes.get(index).getConnectionCosts());
             System.out.println();
+        }
+    }
+    public void printShortestPaths()
+    {
+        for (int index=0;index<nodes.size();index++)
+        {
+            if(nodes.get(index) instanceof Identifiable)
+            {
+                int V=nodes.size();
+                int dist[] = new int[V];
+                Boolean sptSet[] = new Boolean[V];
+                
+                for (int iterator = 0; iterator < V; iterator++) {
+                    dist[iterator] = Integer.MAX_VALUE;
+                    sptSet[iterator] = false;
+                }
+                dist[index] = 0;
+                for (int count = 0; count < V - 1; count++) {
+                    // Pick the minimum distance vertex from the set of vertices
+                    // not yet processed. u is always equal to src in first
+                    // iteration.
+                    int u = Dijkstra.minDistance(dist, sptSet,V);
+
+                    // Mark the picked vertex as processed
+                    sptSet[u] = true;
+
+                    // Update dist value of the adjacent vertices of the
+                    // picked vertex.
+                    for (int v = 0; v < V; v++)
+
+                        // Update dist[v] only if is not in sptSet, there is an
+                        // edge from u to v, and total weight of path from src to
+                        // v through u is smaller than current value of dist[v]
+                        if (!sptSet[v] && graph[u][v] != 0 &&
+                                dist[u] != Integer.MAX_VALUE && dist[u] + graph[u][v] < dist[v])
+                            dist[v] = dist[u] + graph[u][v];
+                }
+
+
+
+
+
+            }
+
         }
     }
     public void printIdentifiable()
     { List<Node> identifiables = new ArrayList<>();
-        for (int i=0;i<nodes.size();i++)
+        for (int index=0;index<nodes.size();index++)
         {
-            if(nodes.get(i) instanceof Identifiable)
-            identifiables.add(nodes.get(i));
+            if(nodes.get(index) instanceof Identifiable)
+            identifiables.add(nodes.get(index));
         }
         identifiables.sort(new Comparator<Node>() {
                                @Override
@@ -60,13 +104,9 @@ public class Network {
                            }
         );
 
-        /*Lambda:
-        identifiables.sort(Comparator.comparing((obj->((Identifiable) obj).getIpAddress() )));
-        */
-
-        for (int i=0;i<identifiables.size();i++)
+        for (int index=0;index<identifiables.size();index++)
         {
-            System.out.println(identifiables.get(i));
+            System.out.println(identifiables.get(index));
         }
     }
     @Override
