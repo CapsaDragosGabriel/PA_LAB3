@@ -44,6 +44,29 @@ public class Computer extends Node implements Identifiable, Storage {
     }
 
     @Override
+    public double getSizeUnit(UnitTypes type) {
+        double storageCap=this.storageCapacity;
+        switch (type)
+        {
+            case TB:
+                storageCap/=1000;
+            case GB:
+                break;
+            case MB:
+                storageCap*=1000;
+                break;
+            case KB:
+                storageCap*=1000000;
+                break;
+            case B:
+                storageCap*=1000000000;
+                break;
+
+        }
+        return storageCap;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Computer)) return false;

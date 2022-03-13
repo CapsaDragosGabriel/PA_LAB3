@@ -20,16 +20,35 @@ public class Network {
         nodes.add(node);
     }
     }
-
+    public void sortNodes()
+    {
+        nodes.sort(Node::compareTo);
+    }
     @Override
     public String toString()
     {
+
         return "Network{\n" +
                 "nodes=" + nodes +
+
                 "}\n";
     }
 
+    public void printConnections()
+    {for (int i=0;i<nodes.size();i++)
+        {System.out.println(nodes.get(i).getConnectionCosts());
+            System.out.println();
+        }
+    }
+    public void printIdentifiable()
+    {for (int i=0;i<nodes.size();i++)
+    {if(nodes.get(i) instanceof Identifiable)
+        System.out.println(nodes.get(i));
+        System.out.println();
+    }
+    }
 
+    
 
     @Override
     public boolean equals(Object o) {

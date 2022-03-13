@@ -12,5 +12,7 @@ public class Compulsory {
         app.addNode(s1);
 
         System.out.println(app);
+        app.sortNodes();
+        System.out.println(app);
     }
 }

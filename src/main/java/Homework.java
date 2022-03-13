@@ -1,12 +1,12 @@
 public class Homework {
     public static void main(String[] args) {
         Network app=new Network();
-        Computer v1=new Computer("Computer A","123",new Location(1,2),"ipaddress",5.6);
-        Router v2=new Router("Router A","123",new Location(1,2),"ipRouter");
-        Switch v3= new Switch("Switch A",new Location(1,3),"macAddr");
-        Switch v4= new Switch("Switch B",new Location(1,3),"macAddr");
-        Router v5=new Router("Router B","123",new Location(1,2),"ipRouter");
-        Computer v6=new Computer("Computer B","123",new Location(1,2),"ipaddress",5.6);
+        Computer v1=new Computer("Computer A","123",new Location(1,2),"ipaddress pc a",5.6);
+        Router v2=new Router("Router A","123",new Location(1,2),"ipRouter a");
+        Switch v3= new Switch("Switch A",new Location(1,3),"macAddr switch a");
+        Switch v4= new Switch("Switch B",new Location(1,3),"macAddr switch b");
+        Router v5=new Router("Router B","123",new Location(1,2),"ipRouter b");
+        Computer v6=new Computer("Computer B","123",new Location(1,2),"ipaddress pc b",5.6);
         app.addNode(v1);
         app.addNode(v2);
         app.addNode(v3);
@@ -39,7 +39,16 @@ public class Homework {
         v5.addConnection(v6,20);
         v6.addConnection(v5,20);
 
-        System.out.println(v1.getConnectionCosts());
         System.out.println(app);
+       app.sortNodes();
+        System.out.println(app);
+
+        app.printConnections();
+        System.out.println();
+
+        app.printIdentifiable();
+
+        System.out.println(v1.getSizeUnit(UnitTypes.KB));
+
     }
 }

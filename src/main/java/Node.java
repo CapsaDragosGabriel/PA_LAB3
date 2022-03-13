@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public abstract class Node {
+public abstract class Node implements Comparable<Node>{
     protected String name;
     protected Location mapLocation;
     protected String macAddress;
@@ -53,12 +53,18 @@ public abstract class Node {
     }
 
     @Override
+    public int compareTo(Node o) {
+        if(this.name.compareTo(o.name)<0 ) return -1;
+        if(this.name.compareTo(o.name)==0 ) return 0;
+        return 1;
+    }
+
+    @Override
     public String toString() {
         return "Node{\n" +
                 "name='" + name + '\'' +
                 ", mapLocation=" + mapLocation +
                 ", macAddress='" + macAddress + '\'' +
-                ", connectionCosts=" + this.getConnectionCosts() +
                 "}\n";
     }
 

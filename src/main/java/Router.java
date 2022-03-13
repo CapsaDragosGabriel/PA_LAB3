@@ -25,6 +25,7 @@ public class Router extends Node implements Identifiable {
                 ", mapLocation=" + mapLocation +
                 ", macAddress='" + macAddress + '\'' +
                 ", ipAddress='" + ipAddress + '\'' +
+                
                 "}\n";
     }
 
