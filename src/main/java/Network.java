@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -41,15 +42,33 @@ public class Network {
         }
     }
     public void printIdentifiable()
-    {for (int i=0;i<nodes.size();i++)
-    {if(nodes.get(i) instanceof Identifiable)
-        System.out.println(nodes.get(i));
-        System.out.println();
-    }
-    }
+    { List<Node> identifiables = new ArrayList<>();
+        for (int i=0;i<nodes.size();i++)
+        {
+            if(nodes.get(i) instanceof Identifiable)
+            identifiables.add(nodes.get(i));
+        }
+        identifiables.sort(new Comparator<Node>() {
+                               @Override
+                               public int compare(Node o1, Node o2) {
+                                   if(((Identifiable)o1).getIpAddress().compareTo(((Identifiable)o2).getIpAddress())<0)
+                                       return -1;
+                                   if(((Identifiable)o1).getIpAddress().compareTo(((Identifiable)o2).getIpAddress())==0)
+                                       return 0;
+                                   return 1;
+                               }
+                           }
+        );
 
-    
+        /*Lambda:
+        identifiables.sort(Comparator.comparing((obj->((Identifiable) obj).getIpAddress() )));
+        */
 
+        for (int i=0;i<identifiables.size();i++)
+        {
+            System.out.println(identifiables.get(i));
+        }
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

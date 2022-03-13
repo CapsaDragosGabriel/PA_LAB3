@@ -1,12 +1,12 @@
 public class Homework {
     public static void main(String[] args) {
         Network app=new Network();
-        Computer v1=new Computer("Computer A","123",new Location(1,2),"ipaddress pc a",5.6);
-        Router v2=new Router("Router A","123",new Location(1,2),"ipRouter a");
+        Computer v1=new Computer("Computer A","123",new Location(1,2),"ipComputerA",5.6);
+        Router v2=new Router("Router A","123",new Location(1,2),"ipRouterA");
         Switch v3= new Switch("Switch A",new Location(1,3),"macAddr switch a");
         Switch v4= new Switch("Switch B",new Location(1,3),"macAddr switch b");
-        Router v5=new Router("Router B","123",new Location(1,2),"ipRouter b");
-        Computer v6=new Computer("Computer B","123",new Location(1,2),"ipaddress pc b",5.6);
+        Router v5=new Router("Router B","123",new Location(1,2),"ipRouterb");
+        Computer v6=new Computer("Computer B","123",new Location(1,2),"ipComputerB",5.6);
         app.addNode(v1);
         app.addNode(v2);
         app.addNode(v3);
