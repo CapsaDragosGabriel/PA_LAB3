@@ -6,7 +6,7 @@ public abstract class Node implements Comparable<Node>{
     protected String name;
     protected Location mapLocation;
     protected String macAddress;
-    Map<Node,Integer> connectionCosts;
+   public Map<Node,Integer> connectionCosts;
     //… constructors, getters, setters
     public Node(String name,  Location mapLocation, String macAddress) {
         this.name = name;

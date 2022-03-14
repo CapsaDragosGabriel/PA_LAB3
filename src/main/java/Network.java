@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Network {
     private List<Node> nodes = new ArrayList<>();
     //… constructors, getters,
-
+    private final int INFINITY=Integer.MAX_VALUE;
     public void addNode(Node node) {
     int iterator=0;
     boolean alreadyExists=false;
@@ -41,50 +41,67 @@ public class Network {
             System.out.println();
         }
     }
-    public void printShortestPaths()
+    public int getIndexOfMinNode(boolean visited[],int minPath[]) {
+        int min = INFINITY;
+        int minIndex = -1;
+        for (int index = 0; index < nodes.size(); index++)
+            if (!visited[index])
+                if (minPath[index] < min)
+                {min = minPath[index];
+                minIndex=index;
+                }
+
+        return minIndex;
+    }
+    public void printShortestPaths(int startingIndex)
     {
+
+        int minPath[]=new int[nodes.size()];
+        boolean visited[]=new boolean[nodes.size()];
         for (int index=0;index<nodes.size();index++)
         {
-            if(nodes.get(index) instanceof Identifiable)
-            {
-                int V=nodes.size();
-                int dist[] = new int[V];
-                Boolean sptSet[] = new Boolean[V];
-                
-                for (int iterator = 0; iterator < V; iterator++) {
-                    dist[iterator] = Integer.MAX_VALUE;
-                    sptSet[iterator] = false;
-                }
-                dist[index] = 0;
-                for (int count = 0; count < V - 1; count++) {
-                    // Pick the minimum distance vertex from the set of vertices
-                    // not yet processed. u is always equal to src in first
-                    // iteration.
-                    int u = Dijkstra.minDistance(dist, sptSet,V);
+            minPath[index]=INFINITY;
+            visited[index]=false;
+        }
+        Node startNode=nodes.get(startingIndex);
+        minPath[startingIndex]=0;
+        visited[startingIndex]=true;
 
-                    // Mark the picked vertex as processed
-                    sptSet[u] = true;
+        for (Node node : startNode.getConnectionCosts().keySet())
+        {
+            int currIndex=nodes.indexOf(node);
 
-                    // Update dist value of the adjacent vertices of the
-                    // picked vertex.
-                    for (int v = 0; v < V; v++)
-
-                        // Update dist[v] only if is not in sptSet, there is an
-                        // edge from u to v, and total weight of path from src to
-                        // v through u is smaller than current value of dist[v]
-                        if (!sptSet[v] && graph[u][v] != 0 &&
-                                dist[u] != Integer.MAX_VALUE && dist[u] + graph[u][v] < dist[v])
-                            dist[v] = dist[u] + graph[u][v];
-                }
-
-
-
-
-
-            }
+            minPath[currIndex]=startNode.getConnectionCosts().get(node);
 
         }
+        for (int index=1;index<nodes.size();index++)
+        {
+            int currIndex=getIndexOfMinNode(visited,minPath);
+            visited[currIndex]=true;
+            Node currNode=nodes.get(currIndex);
+            for (Node node : currNode.getConnectionCosts().keySet())
+            {
+                int currIndex2=nodes.indexOf(node);
+                if (!visited[currIndex2])
+                    if (minPath[currIndex]+currNode.getConnectionCosts().get(node)<minPath[currIndex2])
+                    {
+                        minPath[currIndex2]=minPath[currIndex]+currNode.getConnectionCosts().get(node);
+                    }
+            }
+        }
+        nodes.stream().forEach(node -> System.out.println((node.getName() + " ")));
+        System.out.println(nodes);
+        System.out.println("Starting node is "+startNode.getName()+" paths are: ");
+        for (int index=0;index<nodes.size();index++)
+        {
+            System.out.print(minPath[index]+" ");
+        }
+
     }
+
+
+
+
     public void printIdentifiable()
     { List<Node> identifiables = new ArrayList<>();
         for (int index=0;index<nodes.size();index++)

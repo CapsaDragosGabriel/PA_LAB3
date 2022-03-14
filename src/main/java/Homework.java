@@ -49,6 +49,6 @@ public class Homework {
         app.printIdentifiable();
 
         System.out.println(v1.getSizeUnit(UnitTypes.KB));
-
+        app.printShortestPaths(0);
     }
 }
