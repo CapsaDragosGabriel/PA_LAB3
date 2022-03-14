@@ -87,7 +87,7 @@ public class Network {
                     }
             }
         }
-        
+
      for (int index=0;index<nodes.size();index++)
         {
             if(nodes.get(index) instanceof Identifiable){

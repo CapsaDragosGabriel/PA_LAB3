@@ -47,7 +47,7 @@ public abstract class Node implements Comparable<Node>{
         this.connectionCosts = connectionCosts;
     }
     public void addConnection(Node node, int timeCost) {
-        if (timeCost < 0) System.out.println("Time cost cannot be negative");
+        if (timeCost < 0) System.out.println("Time cost cannot be negative.");
         else
             connectionCosts.put(node, timeCost);
     }
