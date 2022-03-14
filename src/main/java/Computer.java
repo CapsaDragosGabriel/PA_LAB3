@@ -44,7 +44,7 @@ public class Computer extends Node implements Identifiable, Storage {
     }
 
     @Override
-    public double getSizeUnit(UnitTypes type) {
+    public double getSizeUnit(UnitTypes type) {//punctul2
         double storageCap=this.storageCapacity;
         switch (type)
         {

@@ -5,7 +5,7 @@ public class Network {
     //… constructors, getters,
     private final int INF=Integer.MAX_VALUE;
     public void addNode(Node node) {
-    int iterator=0;
+    int iterator;
     boolean alreadyExists=false;
     for(iterator=0;iterator<nodes.size();iterator++)
         if (nodes.get(iterator) ==node)
@@ -13,7 +13,7 @@ public class Network {
             alreadyExists=true;
             System.out.println("There is already a node with this name:"+node.getName());
         }
-    if (alreadyExists==false)
+    if (!alreadyExists)
     {
         nodes.add(node);
     }
@@ -100,7 +100,7 @@ public class Network {
 
 
 
-    public void printIdentifiable()
+    public void printIdentifiable() //punctul 3
     { List<Node> identifiables = new ArrayList<>();
         for (int index=0;index<nodes.size();index++)
         {

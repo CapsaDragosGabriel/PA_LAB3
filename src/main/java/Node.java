@@ -6,13 +6,13 @@ public abstract class Node implements Comparable<Node>{
     protected String name;
     protected Location mapLocation;
     protected String macAddress;
-   public Map<Node,Integer> connectionCosts;
+    public Map<Node,Integer> connectionCosts;//punctul 1
     //… constructors, getters, setters
     public Node(String name,  Location mapLocation, String macAddress) {
         this.name = name;
         this.macAddress = macAddress;
         this.mapLocation = mapLocation;
-        connectionCosts=new HashMap<>();
+        connectionCosts=new HashMap<>();//punctul 1
     }
 
     public String getName() {
