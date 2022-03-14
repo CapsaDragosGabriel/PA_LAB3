@@ -38,13 +38,13 @@ public class Network {
             System.out.println();
         }
     }
-    public int getIndexOfMinNode(boolean visited[],int minPath[]) {
+    public int getClosestNodeIndex(boolean visited[],int minRoute[]) {
         int min = INF;
-        int minIndex = -1;
+        int minIndex = -99;
         for (int index = 0; index < nodes.size(); index++)
             if (!visited[index])
-                if (minPath[index] < min)
-                {min = minPath[index];
+                if (minRoute[index] < min)
+                {min = minRoute[index];
                 minIndex=index;
                 }
 
@@ -53,27 +53,27 @@ public class Network {
     public void printShortestPaths(int startIndex)
     {
 
-        int minPath[]=new int[nodes.size()];
+        int minRoute[]=new int[nodes.size()];
         boolean visited[]=new boolean[nodes.size()];
         for (int index=0;index<nodes.size();index++)
         {
-            minPath[index]=INF;
+            minRoute[index]=INF;
             visited[index]=false;
         }
         Node startNode=nodes.get(startIndex);
-        minPath[startIndex]=0;
+        minRoute[startIndex]=0;
         visited[startIndex]=true;
 
         for (Node node : startNode.getConnectionCosts().keySet())//vad cu ce noduri am conexiune
         {
             int currIndex=nodes.indexOf(node);
 
-            minPath[currIndex]=startNode.getConnectionCosts().get(node);
+            minRoute[currIndex]=startNode.getConnectionCosts().get(node);
 
         }
         for (int index=1;index<nodes.size();index++)
         {
-            int currIndex=getIndexOfMinNode(visited,minPath);//gasesc cel mai apropiat nod
+            int currIndex=getClosestNodeIndex(visited,minRoute);//gasesc cel mai apropiat nod
             visited[currIndex]=true;//si il vizitez
 
             Node currNode=nodes.get(currIndex);
@@ -81,18 +81,18 @@ public class Network {
             {
                 int currIndex2=nodes.indexOf(node);
                 if (!visited[currIndex2])//daca gasesc un nod pe care nu l-am vizitat si aflu o cale mai scurta
-                    if (minPath[currIndex]+currNode.getConnectionCosts().get(node)<minPath[currIndex2])
+                    if (minRoute[currIndex]+currNode.getConnectionCosts().get(node)<minRoute[currIndex2])
                     {
-                        minPath[currIndex2]=minPath[currIndex]+currNode.getConnectionCosts().get(node);
+                        minRoute[currIndex2]=minRoute[currIndex]+currNode.getConnectionCosts().get(node);
                     }
             }
         }
-
+        System.out.println("Starting node is "+startNode.getName()+". The shortest routes are: ");
      for (int index=0;index<nodes.size();index++)
         {
             if(nodes.get(index) instanceof Identifiable){
             System.out.print("To "+nodes.get(index).getName()+" ");
-            System.out.print(minPath[index]+"\n");}
+            System.out.print(minRoute[index]+"\n");}
         }
 
     }
