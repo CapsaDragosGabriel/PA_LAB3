@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Network {
     private List<Node> nodes = new ArrayList<>();
@@ -89,12 +86,14 @@ public class Network {
                     }
             }
         }
+
         nodes.stream().forEach(node -> System.out.println((node.getName() + " ")));
-        System.out.println(nodes);
-        System.out.println("Starting node is "+startNode.getName()+" paths are: ");
+      //  System.out.println(nodes);
+        System.out.println("Starting node is "+startNode.getName()+" the costs of paths are: ");
         for (int index=0;index<nodes.size();index++)
         {
-            System.out.print(minPath[index]+" ");
+            System.out.print(nodes.get(index).getName()+" ");
+            System.out.print(minPath[index]+"\n");
         }
 
     }

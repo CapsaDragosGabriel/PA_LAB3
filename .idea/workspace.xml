@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="70ad4c79-00d0-4f2e-8b5f-0839e76f9b31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dijkstra.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Homework.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Homework.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Network$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Network$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Network.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Network.class" afterDir="false" />
     </list>
@@ -87,6 +84,7 @@
       <workItem from="1647200954324" duration="134000" />
       <workItem from="1647205010463" duration="9794000" />
       <workItem from="1647249073775" duration="3651000" />
+      <workItem from="1647253201330" duration="1341000" />
     </task>
     <servers />
   </component>
